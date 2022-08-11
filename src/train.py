@@ -34,14 +34,14 @@ def load_data(data_path):
     return data, labels
 
 
-def main(repo_path):
+def main(repo_path, iterations=10):
     train_csv_path = repo_path / "data/prepared/train.csv"
     train_data, labels = load_data(train_csv_path)
-    sgd = SGDClassifier(max_iter=10)
+    sgd = SGDClassifier(max_iter=iterations)
     trained_model = sgd.fit(train_data, labels)
     dump(trained_model, repo_path / "model/model.joblib")
 
 
 if __name__ == "__main__":
     repo_path = Path(__file__).parent.parent
-    main(repo_path)
+    main(repo_path, iterations=50)
