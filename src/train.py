@@ -44,4 +44,4 @@ def main(repo_path, iterations=10):
 
 if __name__ == "__main__":
     repo_path = Path(__file__).parent.parent
-    main(repo_path, iterations=50)
+    main(repo_path, iterations=100)
